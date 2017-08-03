@@ -1,3 +1,4 @@
+// Declaring variables.
 var firstName = document.getElementById("firstName");
 var lastName = document.getElementById("lastName");
 var email = document.getElementById("email");
@@ -5,11 +6,14 @@ var country = document.getElementById("country");
 var table = document.getElementsByTagName("table")[0];
 var rIndex,table = document.getElementsByTagName("table")[0];
 
+// Function to add a new row with necessary table cells where input field values will be displayed in the table cells upon button click.
 function addRow(){
 	var mail = document.getElementById("email").value;
 	var atPos = mail.indexOf("@");
 	var dotPos = mail.lastIndexOf(".");
-
+	
+	// Since the form button has an input type of "button" instead of "submit" (Since it will reload the page and reset any data),
+	// I have created my own basic validation.
 	if(firstName.value.length == 0) {
 		alert("Please fill in first name.");
 	} else if(lastName.value.length == 0) {
@@ -34,6 +38,7 @@ function addRow(){
 	}
 }
 
+//function to select a row when clicked and display the value of each table cell in the corresponding input fields.
 function selectedRow() {
 	for(var i = 1; i < table.rows.length; i++) {
 		table.rows[i].onclick = function() {
@@ -46,11 +51,13 @@ function selectedRow() {
 	}
 }
 
+// Function to edit a row where values of the input fields will replace existing table cell data.
 function editValue() {
 	var mail = document.getElementById("email").value;
 	var atPos = mail.indexOf("@");
 	var dotPos = mail.lastIndexOf(".");
-
+	
+	// Validation for editing existing entries.
 	if(firstName.value.length == 0) {
 		alert("Please fill in first name.");
 	} else if(lastName.value.length == 0) {
@@ -67,9 +74,10 @@ function editValue() {
 	}
 }
 
+// Function to remove clicked row.
 function removeRow() {
 	table.deleteRow(rIndex);
-	firstName.value = "";
+	firstName.value = ""; //Remove any text in input fields.
 	lastName.value = "";
 	email.value = "";
 	country.value = "";
