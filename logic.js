@@ -1,14 +1,9 @@
-
-console.log(countries.getName('IS'));
-
 var firstName = document.getElementById("firstName");
 var lastName = document.getElementById("lastName");
 var email = document.getElementById("email");
 var country = document.getElementById("country");
 var table = document.getElementsByTagName("table")[0];
 var rIndex,table = document.getElementsByTagName("table")[0];
-
-
 
 function addRow(){
 	var mail = document.getElementById("email").value;
@@ -24,7 +19,6 @@ function addRow(){
 	} else if(country.value == 0) {
 		alert("Please choose a country.");
 	} else {
-		
 		var newRow = table.insertRow(1);
 		var cell1 = newRow.insertCell(0);
 		var cell2 = newRow.insertCell(1);
