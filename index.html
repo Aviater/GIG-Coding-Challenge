@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Address Book</title>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<div id="formContainer">
+	<form>
+		<label>First Name: </label><br>
+		<input type="text" id="firstName" required><br>
+		<label>Last Name: </label><br>
+		<input type="text" id="lastName" required><br>
+		<label>Email: </label><br>
+		<input type="email" id="email" required><br>
+		<label>Country: </label><br>
+		<input onkeypress="return false;" list="countries" id="country" required>
+		<datalist id="countries">
+			<option value="Belgium">
+			<option value="Spain">
+			<option value="Denmark">
+		</datalist><br><br>
+
+		<input type="button" value="Add" id="add" onclick="addRow();">
+		<input type="button" value="Edit" id="edit" onclick="editValue();">
+		<input type="button" value="Remove" id="remove" onclick="removeRow();">
+	</form>
+</div>
+
+<div id="tableContainer">
+	<table id="list" border="1">
+		<thead>
+  			<th>Firstname</th>
+  			<th>Lastname</th> 
+  			<th>Email</th>
+  			<th>Country</th>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</div>
+
+<script type="text/javascript" src="logic.js"></script>
+</body>
+</html>
